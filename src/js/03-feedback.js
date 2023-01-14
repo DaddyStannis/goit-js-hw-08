@@ -24,7 +24,6 @@ form.addEventListener(
 form.addEventListener('submit', event => {
   event.preventDefault();
   console.log('Email: ', email.value, 'Message: ', message.value);
-  email.value = '';
-  message.value = '';
+  event.currentTarget.removeEventListener();
   localStorage.removeItem('feedback-form-state');
 });
